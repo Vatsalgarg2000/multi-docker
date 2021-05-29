@@ -14,15 +14,15 @@ script:
 #Build prod version of all our projects and push them off to dockerHub
 #Dont specift the dockerfile, it will use the default one onlt
 after_success:
-  - docker build -t stephengrider/multi-client ./client
-  - docker build -t stephengrider/multi-nginx ./nginx
-  - docker build -t stephengrider/multi-server ./server
-  - docker build -t stephengrider/multi-worker ./worker
+  - docker build -t gargvatsal2000/multi-client ./client
+  - docker build -t gargvatsal2000/multi-nginx ./nginx
+  - docker build -t gargvatsal2000/multi-server ./server
+  - docker build -t gargvatsal2000/multi-worker ./worker
   #Push all the built prod files to dockerhub
   # Log in to the docker CLI, Id and pass set in the travis site
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push stephengrider/multi-client
-  - docker push stephengrider/multi-nginx
-  - docker push stephengrider/multi-server
-  - docker push stephengrider/multi-worker
+  - docker push gargvatsal2000/multi-client
+  - docker push gargvatsal2000/multi-nginx
+  - docker push gargvatsal2000/multi-server
+  - docker push gargvatsal2000/multi-worker
